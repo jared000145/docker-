@@ -1,0 +1,77 @@
+apply plugin: 'com.android.application'
+def mobileRelease = new groovy.json.JsonSlurper().parse(rootProject.file('../mobile/release.json'))
+def releaseStore = System.getenv('RECTORPLUS_STORE_FILE')
+def releasePassword = System.getenv('RECTORPLUS_STORE_PASSWORD')
+def releaseAlias = project.findProperty('rectorplusSigningAlias') ?: 'rectorplus-app'
+gradle.taskGraph.whenReady { graph ->
+    if (graph.allTasks.any { it.name.toLowerCase().contains('release') } && (!releaseStore || !releasePassword)) throw new GradleException('Use node scripts/mobile/build.mjs to sign release packages securely.')
+}
+
+android {
+    namespace = "com.rectorplus.app"
+    compileSdk = rootProject.ext.compileSdkVersion
+    buildFeatures { buildConfig true }
+    signingConfigs {
+        rectorplusRelease {
+            if (releaseStore && releasePassword) { storeFile file(releaseStore); storePassword releasePassword; keyAlias releaseAlias; keyPassword releasePassword }
+        }
+    }
+    defaultConfig {
+        applicationId "com.rectorplus.app"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode mobileRelease.nativeCode as Integer
+        versionName mobileRelease.nativeVersion
+        buildConfigField 'int', 'NATIVE_API', mobileRelease.nativeApi.toString()
+        buildConfigField 'long', 'WEB_BUILD', mobileRelease.webBuild.toString() + 'L'
+        buildConfigField 'String', 'WEB_VERSION', '"' + mobileRelease.webVersion + '"'
+        buildConfigField 'String', 'RELEASE_CHANNEL', '"stable"'
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        aaptOptions {
+             // Files and dirs to omit from the packaged assets dir, modified to accommodate modern web apps.
+             // Default: https://android.googlesource.com/platform/frameworks/base/+/282e181b58cf72b6ca770dc7ca5f91f135444502/tools/aapt/AaptAssets.cpp#61
+            ignoreAssetsPattern = '!.svn:!.git:!.ds_store:!*.scc:.*:!CVS:!thumbs.db:!picasa.ini:!*~'
+        }
+    }
+    buildTypes {
+        debug {
+            applicationIdSuffix ".debug"
+            versionNameSuffix "-test"
+            buildConfigField 'String', 'RELEASE_CHANNEL', '"preview"'
+        }
+        release {
+            signingConfig signingConfigs.rectorplusRelease
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+repositories {
+    flatDir{
+        dirs '../capacitor-cordova-android-plugins/src/main/libs', 'libs'
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "androidx.appcompat:appcompat:$androidxAppCompatVersion"
+    implementation "androidx.coordinatorlayout:coordinatorlayout:$androidxCoordinatorLayoutVersion"
+    implementation "androidx.core:core-splashscreen:$coreSplashScreenVersion"
+    implementation project(':capacitor-android')
+    testImplementation "junit:junit:$junitVersion"
+    androidTestImplementation "androidx.test.ext:junit:$androidxJunitVersion"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$androidxEspressoCoreVersion"
+    implementation project(':capacitor-cordova-android-plugins')
+}
+
+apply from: 'capacitor.build.gradle'
+
+try {
+    def servicesJSON = file('google-services.json')
+    if (servicesJSON.text) {
+        apply plugin: 'com.google.gms.google-services'
+    }
+} catch(Exception e) {
+    logger.info("google-services.json not found, google-services plugin not applied. Push Notifications won't work")
+}

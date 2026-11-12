@@ -1,0 +1,1610 @@
+[
+  {
+    "name": "admin_chatbot_messages",
+    "columns": [
+      "content",
+      "created_at",
+      "id",
+      "institution_id",
+      "role",
+      "user_id"
+    ]
+  },
+  {
+    "name": "application_messages",
+    "columns": [
+      "application_id",
+      "content",
+      "created_at",
+      "id",
+      "sender_id",
+      "sender_role"
+    ]
+  },
+  {
+    "name": "applications",
+    "columns": [
+      "created_at",
+      "decided_at",
+      "decided_by",
+      "decision_note",
+      "dossier",
+      "dossier_version",
+      "id",
+      "motivation",
+      "origin_institution_id",
+      "program_id",
+      "status",
+      "target_filiere_id",
+      "target_institution_id",
+      "updated_at",
+      "user_id"
+    ]
+  },
+  {
+    "name": "attendance",
+    "columns": [
+      "academic_year",
+      "campus_id",
+      "created_at",
+      "date",
+      "duration_hours",
+      "id",
+      "institution_id",
+      "justificatif_reason",
+      "justificatif_reviewed_at",
+      "justificatif_reviewed_by",
+      "justificatif_status",
+      "justificatif_submitted_at",
+      "justificatif_url",
+      "marked_by",
+      "schedule_event_id",
+      "session_id",
+      "status",
+      "subject_id",
+      "user_id"
+    ]
+  },
+  {
+    "name": "attendance_sessions",
+    "columns": [
+      "academic_year",
+      "campus_id",
+      "created_at",
+      "duration_hours",
+      "id",
+      "institution_id",
+      "notes",
+      "professor_id",
+      "session_date",
+      "session_time",
+      "subject_id"
+    ]
+  },
+  {
+    "name": "audit_logs",
+    "columns": [
+      "action",
+      "categorie",
+      "created_at",
+      "description",
+      "id",
+      "institution_id",
+      "ip_address",
+      "module",
+      "new_value",
+      "old_value",
+      "record_id",
+      "table_name",
+      "user_email",
+      "user_id",
+      "user_role"
+    ]
+  },
+  {
+    "name": "bac_results",
+    "columns": [
+      "academic_year",
+      "created_at",
+      "file_name",
+      "file_url",
+      "id",
+      "institution_id",
+      "mention",
+      "moyenne",
+      "serie",
+      "source",
+      "status",
+      "subject_scores",
+      "updated_at",
+      "uploaded_by",
+      "user_id"
+    ]
+  },
+  {
+    "name": "backup_logs",
+    "columns": [
+      "created_at",
+      "details",
+      "drive_file_id",
+      "drive_file_name",
+      "establishment_id",
+      "id",
+      "restore_type",
+      "restored_at",
+      "restored_by",
+      "status"
+    ]
+  },
+  {
+    "name": "backups_history",
+    "columns": [
+      "created_at",
+      "created_by",
+      "file_name",
+      "id",
+      "institutions_count",
+      "size_bytes",
+      "storage_path"
+    ]
+  },
+  {
+    "name": "bde_members",
+    "columns": [
+      "academic_year",
+      "bio",
+      "created_at",
+      "id",
+      "photo_url",
+      "role",
+      "title",
+      "user_id"
+    ]
+  },
+  {
+    "name": "bde_posts",
+    "columns": [
+      "author_id",
+      "content",
+      "created_at",
+      "id",
+      "image_url",
+      "title"
+    ]
+  },
+  {
+    "name": "campus_staff",
+    "columns": [
+      "campus_id",
+      "created_at",
+      "id",
+      "institution_id",
+      "role",
+      "updated_at",
+      "user_id"
+    ]
+  },
+  {
+    "name": "campuses",
+    "columns": [
+      "address",
+      "city",
+      "created_at",
+      "cycle",
+      "email",
+      "id",
+      "institution_id",
+      "is_active",
+      "is_main",
+      "name",
+      "phone",
+      "updated_at"
+    ]
+  },
+  {
+    "name": "class_teachers",
+    "columns": [
+      "academic_year",
+      "classe_id",
+      "coefficient",
+      "created_at",
+      "id",
+      "institution_id",
+      "matiere",
+      "professor_user_id"
+    ]
+  },
+  {
+    "name": "classes",
+    "columns": [
+      "academic_year",
+      "created_at",
+      "cycle",
+      "filiere_id",
+      "id",
+      "institution_id",
+      "niveau",
+      "nom",
+      "serie",
+      "updated_at"
+    ]
+  },
+  {
+    "name": "classrooms",
+    "columns": [
+      "building",
+      "campus_id",
+      "capacity",
+      "created_at",
+      "created_by",
+      "equipment",
+      "floor",
+      "id",
+      "institution_id",
+      "is_available",
+      "name",
+      "updated_by"
+    ]
+  },
+  {
+    "name": "community_bookmarks",
+    "columns": [
+      "created_at",
+      "id",
+      "institution_id",
+      "post_id",
+      "user_id"
+    ]
+  },
+  {
+    "name": "community_comment_likes",
+    "columns": [
+      "comment_id",
+      "created_at",
+      "id",
+      "institution_id",
+      "user_id"
+    ]
+  },
+  {
+    "name": "community_comments",
+    "columns": [
+      "author_id",
+      "content",
+      "created_at",
+      "id",
+      "institution_id",
+      "post_id"
+    ]
+  },
+  {
+    "name": "community_likes",
+    "columns": [
+      "created_at",
+      "id",
+      "institution_id",
+      "post_id",
+      "user_id"
+    ]
+  },
+  {
+    "name": "community_posts",
+    "columns": [
+      "author_id",
+      "club_name",
+      "content",
+      "created_at",
+      "id",
+      "image_url",
+      "institution_id",
+      "post_type",
+      "video_url"
+    ]
+  },
+  {
+    "name": "community_reactions",
+    "columns": [
+      "created_at",
+      "emoji",
+      "id",
+      "institution_id",
+      "post_id",
+      "user_id"
+    ]
+  },
+  {
+    "name": "course_documents",
+    "columns": [
+      "created_at",
+      "doc_type",
+      "file_url",
+      "id",
+      "subject_id",
+      "title"
+    ]
+  },
+  {
+    "name": "course_validation",
+    "columns": [
+      "academic_year",
+      "created_at",
+      "filiere_id",
+      "id",
+      "institution_id",
+      "is_validated",
+      "notes",
+      "subject_id",
+      "updated_at",
+      "validated_at",
+      "validated_by"
+    ]
+  },
+  {
+    "name": "cron_secrets",
+    "columns": [
+      "created_at",
+      "name",
+      "value"
+    ]
+  },
+  {
+    "name": "director_signatures",
+    "columns": [
+      "activated_at",
+      "created_at",
+      "director_name",
+      "id",
+      "institution_id",
+      "is_active",
+      "role_scope",
+      "signature_url",
+      "stamp_url",
+      "updated_at",
+      "user_id"
+    ]
+  },
+  {
+    "name": "document_validations",
+    "columns": [
+      "academic_year",
+      "created_at",
+      "created_by",
+      "cycle_rejection_reason",
+      "cycle_signature_id",
+      "cycle_signed_at",
+      "cycle_signed_by",
+      "cycle_status",
+      "document_ref",
+      "document_type",
+      "id",
+      "institution_id",
+      "payload",
+      "pdf_url",
+      "pedagogique_rejection_reason",
+      "pedagogique_signature_id",
+      "pedagogique_signed_at",
+      "pedagogique_signed_by",
+      "pedagogique_status",
+      "rejection_reason",
+      "signature_id",
+      "status",
+      "student_user_id",
+      "title",
+      "updated_at",
+      "validated_at",
+      "validated_by"
+    ]
+  },
+  {
+    "name": "election_candidates",
+    "columns": [
+      "created_at",
+      "election_id",
+      "group_logo_url",
+      "group_name",
+      "id",
+      "photo_url",
+      "program",
+      "user_id",
+      "video_url"
+    ]
+  },
+  {
+    "name": "election_group_members",
+    "columns": [
+      "candidate_id",
+      "created_at",
+      "id",
+      "member_name",
+      "member_role",
+      "photo_url",
+      "user_id"
+    ]
+  },
+  {
+    "name": "election_votes",
+    "columns": [
+      "candidate_id",
+      "created_at",
+      "election_id",
+      "id",
+      "voter_id"
+    ]
+  },
+  {
+    "name": "elections",
+    "columns": [
+      "academic_year",
+      "created_at",
+      "description",
+      "end_date",
+      "id",
+      "institution_id",
+      "start_date",
+      "status",
+      "title"
+    ]
+  },
+  {
+    "name": "email_send_log",
+    "columns": [
+      "created_at",
+      "error_message",
+      "id",
+      "message_id",
+      "metadata",
+      "recipient_email",
+      "status",
+      "template_name"
+    ]
+  },
+  {
+    "name": "email_send_state",
+    "columns": [
+      "auth_email_ttl_minutes",
+      "batch_size",
+      "id",
+      "retry_after_until",
+      "send_delay_ms",
+      "transactional_email_ttl_minutes",
+      "updated_at"
+    ]
+  },
+  {
+    "name": "email_unsubscribe_tokens",
+    "columns": [
+      "created_at",
+      "email",
+      "id",
+      "token",
+      "used_at"
+    ]
+  },
+  {
+    "name": "enrollments",
+    "columns": [
+      "campus_id",
+      "enrolled_at",
+      "id",
+      "progress",
+      "subject_id",
+      "user_id"
+    ]
+  },
+  {
+    "name": "event_comments",
+    "columns": [
+      "content",
+      "created_at",
+      "event_id",
+      "id",
+      "user_id"
+    ]
+  },
+  {
+    "name": "event_likes",
+    "columns": [
+      "created_at",
+      "event_id",
+      "id",
+      "user_id"
+    ]
+  },
+  {
+    "name": "event_media",
+    "columns": [
+      "created_at",
+      "event_id",
+      "id",
+      "media_type",
+      "title",
+      "url"
+    ]
+  },
+  {
+    "name": "event_registrations",
+    "columns": [
+      "created_at",
+      "event_id",
+      "id",
+      "user_id"
+    ]
+  },
+  {
+    "name": "events",
+    "columns": [
+      "created_at",
+      "created_by",
+      "description",
+      "end_date",
+      "event_date",
+      "event_type",
+      "filiere_id",
+      "id",
+      "image_url",
+      "institution_id",
+      "level",
+      "location",
+      "title",
+      "updated_by",
+      "video_url"
+    ]
+  },
+  {
+    "name": "exam_blanc_candidats",
+    "columns": [
+      "academic_year",
+      "created_at",
+      "id",
+      "institution_id",
+      "numero_candidat",
+      "type",
+      "updated_at",
+      "user_id"
+    ]
+  },
+  {
+    "name": "fee_types",
+    "columns": [
+      "amount",
+      "created_at",
+      "cycle_scope",
+      "fee_kind",
+      "id",
+      "institution_id",
+      "is_active",
+      "label",
+      "monthly_count",
+      "niveau",
+      "orientation_scope",
+      "serie",
+      "unlocks_new_year",
+      "updated_at",
+      "validity_years"
+    ]
+  },
+  {
+    "name": "filiere_closures",
+    "columns": [
+      "academic_year",
+      "closed_at",
+      "closed_by",
+      "filiere_id",
+      "id",
+      "institution_id"
+    ]
+  },
+  {
+    "name": "filieres",
+    "columns": [
+      "admission_info",
+      "admission_level",
+      "campus_id",
+      "created_at",
+      "created_by",
+      "description",
+      "id",
+      "institution_id",
+      "name",
+      "open_for_applications",
+      "updated_by"
+    ]
+  },
+  {
+    "name": "google_link_requests",
+    "columns": [
+      "created_at",
+      "expires_at",
+      "google_email",
+      "id",
+      "institution_id",
+      "state_hash",
+      "used_at",
+      "user_id"
+    ]
+  },
+  {
+    "name": "grades",
+    "columns": [
+      "academic_year",
+      "approved_at",
+      "approved_by_student",
+      "average",
+      "campus_id",
+      "cc_grade",
+      "created_at",
+      "created_by",
+      "exam_grade",
+      "id",
+      "institution_id",
+      "is_locked",
+      "semester",
+      "student_signature_url",
+      "subject_id",
+      "submission_batch_id",
+      "submission_status",
+      "submitted_to_admin_at",
+      "updated_at",
+      "updated_by",
+      "user_id"
+    ]
+  },
+  {
+    "name": "grades_trimestre",
+    "columns": [
+      "academic_year",
+      "bareme1",
+      "bareme2",
+      "bareme3",
+      "classe_id",
+      "coefficient",
+      "created_at",
+      "id",
+      "institution_id",
+      "matiere",
+      "note1",
+      "note2",
+      "note3",
+      "professor_user_id",
+      "trimestre",
+      "updated_at",
+      "user_id"
+    ]
+  },
+  {
+    "name": "imports_history",
+    "columns": [
+      "academic_year",
+      "created_at",
+      "created_by",
+      "created_count",
+      "errors_count",
+      "errors_sample",
+      "file_name",
+      "id",
+      "institution_id",
+      "institution_name",
+      "module",
+      "rows_count",
+      "updated_count"
+    ]
+  },
+  {
+    "name": "institution_preregistrations",
+    "columns": [
+      "address",
+      "agrement_url",
+      "created_at",
+      "created_institution_id",
+      "custom_domain",
+      "cycle",
+      "desired_slug",
+      "director_id_url",
+      "director_name",
+      "domain_mode",
+      "enabled_cycles",
+      "id",
+      "institution_name",
+      "institution_type",
+      "logo_url",
+      "nif_url",
+      "notes",
+      "official_email",
+      "phone",
+      "rccm_url",
+      "rejection_reason",
+      "reviewed_at",
+      "reviewed_by",
+      "status",
+      "updated_at"
+    ]
+  },
+  {
+    "name": "institution_subscriptions",
+    "columns": [
+      "amount",
+      "billing_cycle",
+      "created_at",
+      "currency",
+      "ends_at",
+      "id",
+      "institution_id",
+      "notes",
+      "plan_name",
+      "starts_at",
+      "status",
+      "updated_at"
+    ]
+  },
+  {
+    "name": "institutions",
+    "columns": [
+      "academic_year",
+      "accent_color",
+      "accepts_applications",
+      "access_key",
+      "address",
+      "admission_contact",
+      "bde_logo_url",
+      "code",
+      "cover_image_url",
+      "created_at",
+      "created_by",
+      "credits_max_passage",
+      "credits_min_passage",
+      "credits_total_annee",
+      "custom_domain",
+      "cycle",
+      "description",
+      "domain",
+      "email",
+      "enabled_cycles",
+      "end_of_year_completed",
+      "exam_blanc_enabled",
+      "exam_blanc_types",
+      "id",
+      "institution_type",
+      "is_active",
+      "is_multi_campus",
+      "login_button_color",
+      "login_layout",
+      "login_overlay",
+      "login_subtitle",
+      "login_title",
+      "logo_url",
+      "name",
+      "non_reinscription_days",
+      "pass_threshold",
+      "payment_config",
+      "phone",
+      "primary_color",
+      "quota_absence_hours_annuel",
+      "secondary_color",
+      "slogan",
+      "slug",
+      "trimestre_third_note"
+    ]
+  },
+  {
+    "name": "library_annotations",
+    "columns": [
+      "book_id",
+      "color",
+      "created_at",
+      "id",
+      "page",
+      "position",
+      "text",
+      "type",
+      "user_id"
+    ]
+  },
+  {
+    "name": "library_bookmarks",
+    "columns": [
+      "book_id",
+      "created_at",
+      "id",
+      "label",
+      "page",
+      "user_id"
+    ]
+  },
+  {
+    "name": "library_books",
+    "columns": [
+      "author",
+      "category",
+      "cover_image",
+      "cover_url",
+      "created_at",
+      "description",
+      "download_allowed",
+      "external_id",
+      "external_link",
+      "file_url",
+      "filiere_id",
+      "id",
+      "institution_id",
+      "isbn",
+      "niveau",
+      "source",
+      "title",
+      "updated_at",
+      "uploaded_by",
+      "visibility"
+    ]
+  },
+  {
+    "name": "library_favorites",
+    "columns": [
+      "book_id",
+      "created_at",
+      "id",
+      "user_id"
+    ]
+  },
+  {
+    "name": "library_reading_history",
+    "columns": [
+      "book_id",
+      "id",
+      "last_page",
+      "last_read_at",
+      "user_id"
+    ]
+  },
+  {
+    "name": "library_settings",
+    "columns": [
+      "api_key",
+      "api_url",
+      "auto_sync_enabled",
+      "created_at",
+      "detected_auth_type",
+      "detected_data_path",
+      "detected_response_format",
+      "id",
+      "institution_id",
+      "last_sync",
+      "mode_detected",
+      "updated_at"
+    ]
+  },
+  {
+    "name": "library_sync_logs",
+    "columns": [
+      "books_imported",
+      "error_details",
+      "errors_count",
+      "finished_at",
+      "id",
+      "institution_id",
+      "mode_used",
+      "started_at",
+      "status"
+    ]
+  },
+  {
+    "name": "message_group_members",
+    "columns": [
+      "added_at",
+      "group_id",
+      "id",
+      "user_id"
+    ]
+  },
+  {
+    "name": "message_groups",
+    "columns": [
+      "academic_year",
+      "created_at",
+      "created_by",
+      "filiere_id",
+      "group_type",
+      "id",
+      "institution_id",
+      "level",
+      "name"
+    ]
+  },
+  {
+    "name": "messages",
+    "columns": [
+      "audio_url",
+      "body",
+      "created_at",
+      "deleted_for",
+      "deleted_for_everyone",
+      "delivered_at",
+      "edited_at",
+      "id",
+      "image_url",
+      "institution_id",
+      "is_read",
+      "read_at",
+      "recipient_id",
+      "sender_id",
+      "subject",
+      "view_once",
+      "viewed_at"
+    ]
+  },
+  {
+    "name": "notification_settings",
+    "columns": [
+      "allow_email",
+      "allow_push",
+      "allow_sms",
+      "allow_sound",
+      "updated_at",
+      "user_id"
+    ]
+  },
+  {
+    "name": "notifications",
+    "columns": [
+      "created_at",
+      "id",
+      "institution_id",
+      "is_read",
+      "link",
+      "message",
+      "read_at",
+      "title",
+      "type",
+      "user_id"
+    ]
+  },
+  {
+    "name": "orientation_profiles",
+    "columns": [
+      "created_at",
+      "generated_at",
+      "id",
+      "strengths",
+      "suggestions",
+      "summary",
+      "updated_at",
+      "user_id",
+      "weaknesses"
+    ]
+  },
+  {
+    "name": "parametres_etablissement",
+    "columns": [
+      "created_at",
+      "id",
+      "institution_id",
+      "mode_calcul_moyenne_semestre",
+      "mode_validation_ue",
+      "note_min_validation",
+      "quota_absence_hours",
+      "updated_at"
+    ]
+  },
+  {
+    "name": "parent_students",
+    "columns": [
+      "created_at",
+      "id",
+      "parent_id",
+      "relation",
+      "student_user_id"
+    ]
+  },
+  {
+    "name": "parents",
+    "columns": [
+      "created_at",
+      "created_by",
+      "email",
+      "full_name",
+      "id",
+      "institution_id",
+      "phone",
+      "user_id"
+    ]
+  },
+  {
+    "name": "partner_programs",
+    "columns": [
+      "city",
+      "created_at",
+      "description",
+      "domain",
+      "duration_years",
+      "id",
+      "institution_id",
+      "is_active",
+      "level",
+      "min_average",
+      "name",
+      "seats",
+      "series_accepted",
+      "tuition",
+      "updated_at"
+    ]
+  },
+  {
+    "name": "payment_installments",
+    "columns": [
+      "amount",
+      "created_at",
+      "created_by",
+      "due_date",
+      "id",
+      "installment_number",
+      "institution_id",
+      "paid_amount",
+      "payment_id",
+      "status",
+      "updated_at",
+      "updated_by"
+    ]
+  },
+  {
+    "name": "payments",
+    "columns": [
+      "academic_year",
+      "amount",
+      "campus_id",
+      "created_at",
+      "created_by",
+      "description",
+      "due_date",
+      "id",
+      "institution_id",
+      "paid_amount",
+      "payment_date",
+      "payment_method",
+      "receipt_number",
+      "receipt_url",
+      "status",
+      "updated_by",
+      "user_id"
+    ]
+  },
+  {
+    "name": "permissions",
+    "columns": [
+      "category",
+      "created_at",
+      "description",
+      "id",
+      "key",
+      "label"
+    ]
+  },
+  {
+    "name": "professor_documents",
+    "columns": [
+      "created_at",
+      "diploma_field",
+      "diploma_level",
+      "diploma_year",
+      "doc_type",
+      "file_url",
+      "grade",
+      "id",
+      "institution_id",
+      "issuing_institution",
+      "professor_user_id",
+      "title",
+      "updated_at"
+    ]
+  },
+  {
+    "name": "professor_experiences",
+    "columns": [
+      "created_at",
+      "description",
+      "end_date",
+      "id",
+      "institution_id",
+      "organization",
+      "position",
+      "professor_user_id",
+      "start_date",
+      "updated_at"
+    ]
+  },
+  {
+    "name": "professor_history",
+    "columns": [
+      "action",
+      "created_at",
+      "created_by",
+      "details",
+      "id",
+      "institution_id",
+      "professor_user_id"
+    ]
+  },
+  {
+    "name": "profiles",
+    "columns": [
+      "academic_title",
+      "academic_year",
+      "address",
+      "avatar_url",
+      "birth_place",
+      "campus_id",
+      "classe_id",
+      "created_at",
+      "date_of_birth",
+      "department",
+      "email",
+      "filiere_id",
+      "first_name",
+      "google_email",
+      "id",
+      "institution_id",
+      "last_name",
+      "level",
+      "nationality",
+      "oriente_etat",
+      "parent_contact",
+      "phone",
+      "post_bac",
+      "recovery_email",
+      "serie",
+      "sexe",
+      "signature_url",
+      "statut_boursier",
+      "student_number",
+      "tuteur_email",
+      "updated_at",
+      "user_id"
+    ]
+  },
+  {
+    "name": "push_subscriptions",
+    "columns": [
+      "auth",
+      "created_at",
+      "endpoint",
+      "id",
+      "p256dh",
+      "user_agent",
+      "user_id"
+    ]
+  },
+  {
+    "name": "rattrapages",
+    "columns": [
+      "academic_year",
+      "campus_id",
+      "created_at",
+      "exam_date",
+      "filiere_id",
+      "final_grade",
+      "id",
+      "level",
+      "location",
+      "original_average",
+      "rattrapage_grade",
+      "status",
+      "subject_id",
+      "user_id"
+    ]
+  },
+  {
+    "name": "releves_trimestre",
+    "columns": [
+      "academic_year",
+      "appreciation",
+      "classe_id",
+      "created_at",
+      "id",
+      "institution_id",
+      "moyenne_annuelle",
+      "moyenne_trimestre",
+      "pdf_url",
+      "qr_token",
+      "rang",
+      "trimestre",
+      "updated_at",
+      "user_id"
+    ]
+  },
+  {
+    "name": "role_permissions",
+    "columns": [
+      "created_at",
+      "id",
+      "permission_id",
+      "role_id"
+    ]
+  },
+  {
+    "name": "roles",
+    "columns": [
+      "created_at",
+      "description",
+      "id",
+      "institution_id",
+      "is_system",
+      "name",
+      "system_key",
+      "updated_at"
+    ]
+  },
+  {
+    "name": "schedule_events",
+    "columns": [
+      "academic_year",
+      "campus_id",
+      "classe_id",
+      "classroom_id",
+      "created_at",
+      "created_by",
+      "end_time",
+      "event_type",
+      "exam_kind",
+      "filiere_id",
+      "id",
+      "institution_id",
+      "level",
+      "location",
+      "recurrence_group_id",
+      "start_time",
+      "subject_id",
+      "title",
+      "updated_by",
+      "user_id"
+    ]
+  },
+  {
+    "name": "semester_progress",
+    "columns": [
+      "academic_year",
+      "created_at",
+      "id",
+      "semester_name",
+      "status",
+      "total_credits",
+      "user_id",
+      "validated_credits"
+    ]
+  },
+  {
+    "name": "soutenance_jury",
+    "columns": [
+      "created_at",
+      "grade",
+      "id",
+      "professor_name",
+      "role",
+      "soutenance_id"
+    ]
+  },
+  {
+    "name": "soutenances",
+    "columns": [
+      "academic_year",
+      "created_at",
+      "filiere_id",
+      "final_grade",
+      "id",
+      "institution_id",
+      "level",
+      "location",
+      "pv_url",
+      "soutenance_date",
+      "status",
+      "student_id",
+      "subject",
+      "title",
+      "video_url"
+    ]
+  },
+  {
+    "name": "state_reimbursements",
+    "columns": [
+      "academic_year",
+      "amount_received",
+      "amount_refunded",
+      "created_at",
+      "id",
+      "institution_id",
+      "notes",
+      "receipt_number",
+      "received_at",
+      "refunded_at",
+      "retention_amount",
+      "status",
+      "updated_at",
+      "user_id"
+    ]
+  },
+  {
+    "name": "stories",
+    "columns": [
+      "created_at",
+      "description",
+      "expires_at",
+      "id",
+      "institution_id",
+      "media_type",
+      "media_url",
+      "user_id"
+    ]
+  },
+  {
+    "name": "story_likes",
+    "columns": [
+      "created_at",
+      "id",
+      "story_id",
+      "user_id"
+    ]
+  },
+  {
+    "name": "story_replies",
+    "columns": [
+      "author_id",
+      "content",
+      "created_at",
+      "id",
+      "story_id"
+    ]
+  },
+  {
+    "name": "story_views",
+    "columns": [
+      "created_at",
+      "id",
+      "story_id",
+      "user_id"
+    ]
+  },
+  {
+    "name": "student_badges",
+    "columns": [
+      "badge_description",
+      "badge_icon",
+      "badge_name",
+      "earned_at",
+      "id",
+      "user_id"
+    ]
+  },
+  {
+    "name": "student_documents",
+    "columns": [
+      "academic_year",
+      "campus_id",
+      "created_at",
+      "doc_type",
+      "file_size",
+      "file_url",
+      "id",
+      "institution_id",
+      "mime_type",
+      "title",
+      "uploaded_by",
+      "user_id"
+    ]
+  },
+  {
+    "name": "student_points",
+    "columns": [
+      "action",
+      "created_at",
+      "description",
+      "id",
+      "points",
+      "user_id"
+    ]
+  },
+  {
+    "name": "student_year_history",
+    "columns": [
+      "academic_year",
+      "created_at",
+      "credits_acquired",
+      "credits_total",
+      "decision",
+      "filiere_id",
+      "id",
+      "level",
+      "status",
+      "ue_to_retake_ids",
+      "ue_validated_ids",
+      "user_id"
+    ]
+  },
+  {
+    "name": "student_years",
+    "columns": [
+      "academic_year",
+      "block_reason",
+      "blocked_at",
+      "can_access",
+      "created_at",
+      "debt_cancelled",
+      "debt_frozen",
+      "enrollment_status",
+      "exit_date",
+      "exit_decided_by",
+      "exit_type",
+      "filiere_id",
+      "id",
+      "institution_id",
+      "niveau",
+      "status",
+      "unblocked_at",
+      "updated_at",
+      "user_id"
+    ]
+  },
+  {
+    "name": "students",
+    "columns": [
+      "created_at",
+      "date_of_birth",
+      "filiere_id",
+      "id",
+      "institution_id",
+      "matricule",
+      "niveau",
+      "nom",
+      "oriente_etat",
+      "prenom",
+      "statut_boursier"
+    ]
+  },
+  {
+    "name": "subject_classes",
+    "columns": [
+      "classe_id",
+      "coefficient",
+      "created_at",
+      "id",
+      "institution_id",
+      "professor_name",
+      "professor_user_id",
+      "subject_id",
+      "updated_at"
+    ]
+  },
+  {
+    "name": "subjects",
+    "columns": [
+      "academic_year",
+      "campus_id",
+      "code",
+      "coefficient",
+      "created_at",
+      "created_by",
+      "credits",
+      "description",
+      "duree_cours_minutes",
+      "evaluation_mode",
+      "filiere_id",
+      "id",
+      "institution_id",
+      "level",
+      "levels",
+      "name",
+      "professor",
+      "pv_academic_year",
+      "pv_semester",
+      "pv_uploaded_at",
+      "pv_uploaded_by",
+      "pv_url",
+      "quota_absence_hours",
+      "semester",
+      "syllabus",
+      "updated_by",
+      "volume_horaire_cm",
+      "volume_horaire_td",
+      "volume_horaire_tp"
+    ]
+  },
+  {
+    "name": "suppressed_emails",
+    "columns": [
+      "created_at",
+      "email",
+      "id",
+      "metadata",
+      "reason"
+    ]
+  },
+  {
+    "name": "team_members",
+    "columns": [
+      "academic_scope",
+      "allowed_modules",
+      "created_at",
+      "created_by",
+      "custom_role_label",
+      "email",
+      "first_name",
+      "id",
+      "institution_id",
+      "is_principal",
+      "last_name",
+      "phone",
+      "team_role",
+      "updated_at",
+      "user_id"
+    ]
+  },
+  {
+    "name": "trimestre_closures",
+    "columns": [
+      "academic_year",
+      "closed_at",
+      "closed_by",
+      "created_at",
+      "id",
+      "institution_id",
+      "trimestre",
+      "updated_at"
+    ]
+  },
+  {
+    "name": "ue_matieres",
+    "columns": [
+      "created_at",
+      "id",
+      "subject_id",
+      "ue_id"
+    ]
+  },
+  {
+    "name": "ues",
+    "columns": [
+      "academic_year",
+      "code",
+      "created_at",
+      "created_by",
+      "credits",
+      "description",
+      "filiere_id",
+      "id",
+      "institution_id",
+      "niveau",
+      "nom",
+      "semester",
+      "updated_at",
+      "updated_by"
+    ]
+  },
+  {
+    "name": "user_roles",
+    "columns": [
+      "id",
+      "role",
+      "user_id"
+    ]
+  },
+  {
+    "name": "user_roles_v2",
+    "columns": [
+      "created_at",
+      "id",
+      "institution_id",
+      "role_id",
+      "user_id"
+    ]
+  },
+  {
+    "name": "video_conferences",
+    "columns": [
+      "created_at",
+      "filiere_id",
+      "id",
+      "institution_id",
+      "level",
+      "meeting_url",
+      "professor_id",
+      "scheduled_at",
+      "status",
+      "title"
+    ]
+  }
+]

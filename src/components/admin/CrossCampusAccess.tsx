@@ -1,0 +1,16 @@
+import {useState} from 'react';
+import {useQuery,useQueryClient} from '@tanstack/react-query';
+import {supabase} from '@/integrations/supabase/client';
+import {Switch} from '@/components/ui/switch';
+import {Building2,Globe2,Wallet,ShieldCheck} from 'lucide-react';
+import {toast} from 'sonner';
+export default function CrossCampusAccess({institutionId}:{institutionId:string}){
+ const qc=useQueryClient(),client=supabase as any;const [busy,setBusy]=useState('');
+ const query=useQuery({queryKey:['cross-campus-access',institutionId],queryFn:async()=>{const[members,grants]=await Promise.all([client.from('team_members').select('user_id,first_name,last_name,team_role,is_principal,allowed_modules,academic_scope').eq('institution_id',institutionId),client.from('campus_access_grants').select('user_id').eq('institution_id',institutionId)]);if(members.error||grants.error)throw members.error||grants.error;return{members:members.data as any[],grants:new Set(grants.data.map((g:any)=>g.user_id))};}});
+ async function save(m:any,global:boolean,finance:boolean){setBusy(m.user_id);try{const{error}=await client.rpc('configure_campus_responsibility',{_user:m.user_id,_global:global,_finance:finance});if(error)throw error;await Promise.all([qc.invalidateQueries({queryKey:['cross-campus-access']}),qc.invalidateQueries({queryKey:['my-campus-scope']}),qc.invalidateQueries({queryKey:['team-permissions']}),qc.invalidateQueries({queryKey:['campus-overview']})]);toast.success('Responsabilités mises à jour');}catch(e:any){toast.error(e.message);}finally{setBusy('');}}
+ return <section className="campus-responsibilities"><header><span className="workspace-icon"><ShieldCheck/></span><div><h2>Responsabilités et visibilité</h2><p>Les affectations fixent les campus gérés. La vue globale et les finances s’accordent séparément.</p></div></header>
+ <div className="campus-access-legend"><span><Building2/>Gestion des sites affectés</span><span><Globe2/>Direction de l’ensemble</span><span><Wallet/>Synthèse financière autorisée</span></div>
+ {query.isError&&<p role="alert">Impossible de charger les autorisations.</p>}
+ {query.data?.members.filter(m=>!m.is_principal).map(m=>{const global=query.data!.grants.has(m.user_id),finance=!!m.allowed_modules?.includes('director_finance');return <article key={m.user_id} className="campus-responsibility-row"><div><strong>{m.first_name} {m.last_name}</strong><p>{m.team_role} · {global?'Direction globale':'Campus affectés'}</p></div><div className="campus-role-switches"><label><Globe2/>Tous les campus<Switch aria-label={`Tous les campus pour ${m.first_name} ${m.last_name}`} disabled={busy===m.user_id} checked={global} onCheckedChange={v=>void save(m,v,finance)}/></label><label><Wallet/>Synthèse financière<Switch aria-label={`Synthèse financière pour ${m.first_name} ${m.last_name}`} disabled={busy===m.user_id} checked={finance} onCheckedChange={v=>void save(m,global,v)}/></label></div>{m.academic_scope!=='all'&&m.academic_scope&&<small>Le périmètre pédagogique de ce membre reste limité à son cycle.</small>}</article>;})}
+ <p className="text-xs text-muted-foreground">La messagerie entre collègues et le tableau de bord sont activés pour les membres configurés ici. Les droits de saisie comptable existants restent gérés dans leur rôle. Le propriétaire conserve la vue globale.</p></section>;
+}

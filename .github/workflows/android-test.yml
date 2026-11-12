@@ -1,0 +1,41 @@
+name: APK Android de test
+on:
+  workflow_dispatch:
+    inputs:
+      live_preview:
+        description: Charger le site hébergé pour suivre les modifications (test uniquement)
+        type: boolean
+        default: false
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      VITE_SUPABASE_URL: ${{ vars.VITE_SUPABASE_URL }}
+      VITE_SUPABASE_PUBLISHABLE_KEY: ${{ vars.VITE_SUPABASE_PUBLISHABLE_KEY }}
+      CAPACITOR_TEST_MODE: ${{ inputs.live_preview && '1' || '0' }}
+      CAPACITOR_TEST_URL: ${{ inputs.live_preview && vars.RECTORPLUS_WEB_URL || '' }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+      - uses: android-actions/setup-android@v3
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm test
+      - run: npm run build:hosted
+      - run: npx cap sync android
+      - run: chmod +x gradlew && ./gradlew assembleDebug
+        working-directory: android
+      - uses: actions/upload-artifact@v4
+        with:
+          name: rectorplus-android-test
+          path: android/app/build/outputs/apk/debug/app-debug.apk
+          if-no-files-found: error

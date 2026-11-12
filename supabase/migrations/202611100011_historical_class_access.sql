@@ -1,0 +1,1 @@
+create policy historical_class_identity on public.classes for select to authenticated using(exists(select 1 from public.student_years y where y.classe_id=classes.id and y.institution_id=classes.institution_id and private.can_read_student(y.user_id)));
